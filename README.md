@@ -1,4 +1,4 @@
-# This is a front-end web view to integrate Punk API
+# Front-end web view that integrate Punk API
 
 It's an exercise, not for commercial use or anything like that.
 

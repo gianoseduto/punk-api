@@ -5,11 +5,13 @@ import { ReactComponent as StarFull } from "../icons/star-full.svg";
 import { ReactComponent as StarEmpty } from "../icons/star-empty.svg";
 import BeerCookies from "../helpers/BeerCookies";
 import Helpers from "../helpers/Helpers";
+import { useNavigate } from "react-router-dom";
 
 export default function Favorites() {
   const [beers, setBeers] = useState([]);
   const [pref, setPref] = useState(BeerCookies.get());
   const [beersError, setBeersError] = useState(undefined);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const getBeers = async () => {
@@ -37,9 +39,10 @@ export default function Favorites() {
       <section className="home_content bg-light">
         <div className="container">
           <div className="row py-4">
+            { beers.length > 1 ?
             <div className="col-12">
               <div className="beers_info">
-                <h4>{beers.length} {beers.length > 1 ? "birre" : "birra" }</h4>
+                <h4>{beers.length} {beers.length === 1 ? "birra" : "birre" }</h4>
               </div>
 
               <div className="beers_ct">
@@ -69,6 +72,13 @@ export default function Favorites() {
                 }
               </div>
             </div>
+              :
+              <div className="col-12 py-3 text-center">
+                <h4 className="mb-4">Non hai nessuna birra tra i preferiti, torna alla home o provane una casuale!</h4>
+                <button className="btn btn-primary" onClick={() => {navigate("/")}}>Home Page</button>
+                <button className="btn btn-primary" onClick={() => {navigate("/productPage?id=random")}}>Birra Random</button>
+              </div>
+            }
           </div>
         </div>
       </section>

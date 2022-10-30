@@ -11,7 +11,7 @@ export default function ProductPagePage() {
 
   const [beer, setBeer] = useState(null);
   const [beerError, setBeerError] = useState("");
-  const navigator = useNavigate();
+  const navigate = useNavigate();
   const urlParams = new URLSearchParams(window.location.search);
   const id = urlParams.get("id");
 
@@ -40,7 +40,7 @@ export default function ProductPagePage() {
           <div className="container py-3 text-center">
           <h3 className="text-warning mb-2">{ beerError }</h3>
           <h4 className="mb-4">Torna alla home e riprova</h4>
-          <button className="btn btn-outline-dark" onClick={() => {navigator("/")}}>Home Page</button>
+          <button className="btn btn-primary" onClick={() => {navigate("/")}}>Home Page</button>
           </div>
           :
         beer ? <ProductDetail beer={beer} /> : ""}

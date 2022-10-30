@@ -187,7 +187,7 @@ export default function HomePage() {
           <div className="row py-3">
             <div className="col-12">
               <div className="beers_info">
-                <h4>{beers.length} {beers.length > 1 ? "birre" : "birra" }</h4>
+                <h4>{beers.length} {beers.length === 1 ? "birra" : "birre" }</h4>
                 <div className="paginator">
                   { beers.length > beerPerPage ? paginator() : ""}
                 </div>

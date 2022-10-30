@@ -4,7 +4,7 @@ It's an exercise, not for commercial use or anything like that.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-The Punk Api documentation used [PUNK API V2 DOCUMENTATIO](https://punkapi.com/documentation/v2).
+The Punk Api documentation used [PUNK API V2 Documentation](https://punkapi.com/documentation/v2).
 
 ## Available Scripts
 
